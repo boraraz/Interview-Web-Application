@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Store from './Store.js'
+import Answers from './answers'
 import { Button } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { useAlert } from 'react-alert'
@@ -36,7 +36,7 @@ const Main = () => {
         setAnswer(param)
         const answerObject = {
             type: subject,
-            aname: answer,
+            aName: answer,
             questName: name,
         }
         setSavedAnswers([...savedAnswers, answerObject]) 
@@ -66,7 +66,7 @@ const Main = () => {
                    </form>
             </div>
             {storeVisible &&
-                <Store ans={answer} />
+                <Answers ans={answer} />
             }
         </div>
     );
