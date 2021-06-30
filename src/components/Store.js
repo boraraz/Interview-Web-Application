@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Table from 'react-bootstrap/Table'
 import { Button } from 'react-bootstrap';
 import { useAlert } from 'react-alert';
+import { addQuestion } from '../store/QuestionReducer.js'
 
 const Store = (props) => {
     const { quest } = props
     const [question, setAnswer] = useState([])
     var { questions } = useSelector((state) => state.question)
-    {}
+    {const qname = questions.name}
     useEffect(() => {
         setAnswer(quest);
     }, [quest]);
 
     const alert = useAlert();
-    const deleteQuestion = () => {
+    const dispatch = useDispatch() 
+    const deleteQuestion = (qname) => {
         debugger
         alert.show('Deleted');
-        const element = questions.find((x) => x.name)
+        const element = questions.find((x) => x.name === qname)
         const index = questions.indexOf(element)
-        questions.splice(index, 1)
+        const updatedQuestion = questions.splice(index, 1)
+        dispatch(addQuestion(updatedQuestion))
     }
 
     return (
