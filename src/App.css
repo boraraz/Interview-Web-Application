@@ -1,0 +1,78 @@
+@media screen and (min-width:768px){
+  .desktop{
+      display: none !important;
+  }
+}
+@media screen and (max-width:767px){
+  .nav-col{
+      display: none !important;
+  }
+  .head-btn{
+      display: none !important;
+  }
+  .sec{
+      width: 100%;
+      margin-right: 1px;
+      margin-left: 3px;
+  }
+  .title{
+      background-color: #0275d8;
+      color: #fff;
+      margin-bottom: 0;
+      margin-left: 4px;
+      text-align: center;
+      font-weight: bold;
+      margin-right: 4px;
+  }
+  .question{
+      margin-right: 4px !important;
+  }
+}
+.sidenav{
+  height: 700px; 
+  border: 1px solid #0275d8;
+}
+.sec{
+  width: 100%;
+}
+.dropbtn {
+background-color: #0275d8;
+color: white;
+border: none;
+cursor: pointer;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+right: 0;
+background-color: #0275d8;
+min-width: 160px;
+box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.8);
+z-index: 1;
+border: 1px solid #0275d8;
+border-radius: 4px;
+}
+
+.dropdown-content a {
+color: whitesmoke
+;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {background-color: #024c8d}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown:hover .dropbtn {
+background-color: #024c8d;
+}
