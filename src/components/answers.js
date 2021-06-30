@@ -3,14 +3,14 @@ import Table from 'react-bootstrap/Table'
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 
-const Answers = () => {
-    // const { ans } = props
-    // const [answers, setAnswer] = useState([])
-    // var { answer } = useSelector((state) => state.answers)
+const Answers = (props) => {
+    const { ans } = props
+    const [answer, setAnswer] = useState([])
+    var { answers } = useSelector((state) => state.answers)
 
-    // useEffect(() => {
-    //     setAnswer(ans);
-    // }, [ans]);
+    useEffect(() => {
+        setAnswer(ans);
+    }, [ans]);
     return (
         <div className="container fluid">
             <Table>
@@ -22,14 +22,14 @@ const Answers = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {answers.map((x) => (
+                    {answers.map((x) => (
                         <tr>
                             <th>{x.type}</th>
                             <th>{x.questName}</th>
                             <th>{x.aName}</th>
                         </tr>
                     ))
-                    } */}
+                    }
                 </tbody>
             </Table>
         </div>

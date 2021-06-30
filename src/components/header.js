@@ -35,19 +35,15 @@ const Header = () => {
                             <Dropdown.Item onClick={() => refresh()}>Question</Dropdown.Item>
                             <Dropdown.Item onClick={() => page()}>Question Entry</Dropdown.Item>
                             <Dropdown.Item onClick={() => showAnswers()}>Show Answer</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Item onClick={() => selectSubject("FrontEnd")}>Frontend</Dropdown.Item>
-                            <Dropdown.Item onClick={() => selectSubject("BackEnd")}>Backend</Dropdown.Item>
-                            <Dropdown.Item onClick={() => selectSubject("DevOps")}>DevOps</Dropdown.Item>
-                        </Dropdown.Menu>
+                            </Dropdown.Menu>
                     </Dropdown>
                 </div>
             </div>
             <Navbar className="desktop justify-content-center" bg="primary" variant="dark" expanded="true">
                 <Nav>
-                    <Nav.Link className="navbar-element" href="#frontend">Frontend</Nav.Link>
-                    <Nav.Link className="navbar-element" href="#backend">Backend</Nav.Link>
-                    <Nav.Link className="navbar-element" href="#devops">Devops</Nav.Link>
+                    <Nav.Link className="navbar-element" onClick={() => selectSubject("FrontEnd")}>Frontend</Nav.Link>
+                    <Nav.Link className="navbar-element" onClick={() => selectSubject("BackEnd")}>Backend</Nav.Link>
+                    <Nav.Link className="navbar-element" onClick={() => selectSubject("DevOps")}>Devops</Nav.Link>
                 </Nav>
             </Navbar>
         </Container>
