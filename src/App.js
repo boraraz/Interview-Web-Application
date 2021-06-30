@@ -2,8 +2,8 @@ import React from 'react'
 import Header from './components/header'
 import Sidebar from './components/sidebar';
 import Main from './components/main';
-import QuestionEntry from './components/questionEntry'
-//import './App.css';
+import QuestionEntry from './components/questionEntry';
+import Answers from './components/answers';
 import { Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -32,6 +32,7 @@ const App = () => {
                   <Main />
                 </Route>
                 <Route path="/questionEntry" component={QuestionEntry} />
+                <Route path="/answers" component={Answers} />
               </Switch>
             
           </Col>
