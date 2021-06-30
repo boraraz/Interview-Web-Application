@@ -25,7 +25,6 @@ const App = () => {
             <Sidebar />
           </Col>
           <Col className="mainLayout">
-
             <Switch>
               <Route exact path="/Main">
                 <Main />
@@ -33,7 +32,6 @@ const App = () => {
               <Route path="/questionEntry" component={QuestionEntry} />
               <Route path="/answers" component={Answers} />
             </Switch>
-
           </Col>
         </Row>
     </Container>

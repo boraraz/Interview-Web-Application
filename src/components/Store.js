@@ -7,15 +7,19 @@ import { useAlert } from 'react-alert';
 const Store = (props) => {
     const { quest } = props
     const [question, setAnswer] = useState([])
-    const { questions } = useSelector((state) => state.question)
-
+    var { questions } = useSelector((state) => state.question)
+    {}
     useEffect(() => {
         setAnswer(quest);
     }, [quest]);
 
     const alert = useAlert();
     const deleteQuestion = () => {
-        alert.show('Deleted')
+        debugger
+        alert.show('Deleted');
+        const element = questions.find((x) => x.name)
+        const index = questions.indexOf(element)
+        questions.splice(index, 1)
     }
 
     return (
