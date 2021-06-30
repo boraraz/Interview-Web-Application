@@ -14,11 +14,9 @@ import {
 } from "react-router-dom";
 
 const App = () => {
-  
-    return (
-      <Container fluid>
-      <Router>
-      <div>
+
+  return (
+    <Container fluid>
         <Row>
           <Header />
         </Row>
@@ -27,22 +25,20 @@ const App = () => {
             <Sidebar />
           </Col>
           <Col className="mainLayout">
-           
-              <Switch>
-                <Route exact path="/Main"> 
-                  <Main />
-                </Route>
-                <Route path="/questionEntry" component={QuestionEntry} />
-                <Route path="/answers" component={Answers} />
-              </Switch>
-            
+
+            <Switch>
+              <Route exact path="/Main">
+                <Main />
+              </Route>
+              <Route path="/questionEntry" component={QuestionEntry} />
+              <Route path="/answers" component={Answers} />
+            </Switch>
+
           </Col>
         </Row>
-      </div>
-      </Router>
-      </Container>
-    );
-  
+    </Container>
+  );
+
 }
 
 export default App;
