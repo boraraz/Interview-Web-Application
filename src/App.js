@@ -4,7 +4,7 @@ import Sidebar from './components/sidebar';
 import Main from './components/main';
 import QuestionEntry from './components/questionEntry';
 import Answers from './components/answers';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -16,6 +16,7 @@ import {
 const App = () => {
   
     return (
+      <Container fluid>
       <Router>
       <div>
         <Row>
@@ -39,6 +40,7 @@ const App = () => {
         </Row>
       </div>
       </Router>
+      </Container>
     );
   
 }
