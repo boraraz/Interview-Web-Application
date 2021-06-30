@@ -27,12 +27,12 @@ const Store = (props) => {
 
     return (
         <Container fluid>
-            <Table className="mt-3">
-                <tbody>
+            <Table className="mt-3" style={{tableLayout: "auto"}}>
+                
                     <tr>
-                        <th>Subject</th>
-                        <th>Question</th>
-                        <th>Delete</th>
+                        <th style={{width: "10%"}}>Subject</th>
+                        <th style={{width: "80%"}}>Question</th>
+                        <th style={{width: "10%"}}>Delete</th>
                     </tr>
 
 
@@ -46,7 +46,6 @@ const Store = (props) => {
 
 
                     ))}
-                </tbody>
             </Table>
         </Container>
     )
