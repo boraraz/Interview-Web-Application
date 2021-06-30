@@ -9,7 +9,6 @@ import store, { persistor } from "./store/"
 import { BrowserRouter } from "react-router-dom";
 import { positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
-import { BrowserRouter as Router} from 'react-router-dom';
 const options = {
   timeout: 5000,
   position: positions.BOTTOM_CENTER
@@ -19,9 +18,7 @@ ReactDOM.render(
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
         <AlertProvider template={AlertTemplate} {...options}>
-          <Router>
-            <App />
-          </Router>
+          <App />
         </AlertProvider>
       </BrowserRouter>
     </PersistGate>
