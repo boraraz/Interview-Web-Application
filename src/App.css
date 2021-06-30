@@ -76,3 +76,10 @@ display: block;
 .dropdown:hover .dropbtn {
 background-color: #024c8d;
 }
+
+.cont {
+  width: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}

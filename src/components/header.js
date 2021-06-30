@@ -45,7 +45,7 @@ const Header = () => {
                 </div>
             </div>
             <hr className="hrmp" />
-            <Navbar className="desktop justify-content-center" fluid bg="primary" variant="dark" expanded="true">
+            <Navbar className="desktop justify-content-center" bg="primary" variant="dark" expanded="true">
                 <Nav>
                     <Nav.Link className="navbar-element" href="#frontend">Frontend</Nav.Link>
                     <Nav.Link className="navbar-element" href="#backend">Backend</Nav.Link>
