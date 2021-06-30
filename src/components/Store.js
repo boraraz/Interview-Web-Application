@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import Table from 'react-bootstrap/Table'
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { useAlert } from 'react-alert';
 import { addQuestion } from '../store/QuestionReducer.js'
 
@@ -26,7 +26,7 @@ const Store = (props) => {
     }
 
     return (
-        <div className="container fluid">
+        <Container fluid>
             <Table className="mt-3">
                 <tbody>
                     <tr>
@@ -48,7 +48,7 @@ const Store = (props) => {
                     ))}
                 </tbody>
             </Table>
-        </div>
+        </Container>
     )
 
 }
