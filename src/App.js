@@ -21,7 +21,7 @@ const App = () => {
           <Header />
         </Row>
         <Row className="bodyLayout">
-          <Col sm={3} className="sidenav mobil">
+          <Col sm={2} className="sidenav mobil">
             <Sidebar />
           </Col>
           <Col className="mainLayout">
