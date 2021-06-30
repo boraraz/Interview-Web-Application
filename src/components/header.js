@@ -22,10 +22,9 @@ const Header = () => {
     }
     return (
         <Container fluid className="p-0">
-            <div className="d-flex flex-nowrap headerLayout justify-content-between">
-                <h1 className="headerStyle">BİTES Interview</h1>
-                <div></div>
-                <div className="align">
+            <div className="d-flex flex-nowrap headerLayout justify-content-between bg-primary">
+                <img src="/assets/bites-logo.png" height="35px"/>
+                <div className="center-div">
                     <Button className="mobile btnStyle" onClick={() => showAnswers()}>Show Answers</Button>
                     <Button className="mobile btnStyle" onClick={() => page()}>Question Entry</Button>
                     <Button className="mobile btnStyle" onClick={() => refresh()}>Question</Button>
@@ -44,7 +43,6 @@ const Header = () => {
                     </Dropdown>
                 </div>
             </div>
-            <hr className="hrmp" />
             <Navbar className="desktop justify-content-center" bg="primary" variant="dark" expanded="true">
                 <Nav>
                     <Nav.Link className="navbar-element" href="#frontend">Frontend</Nav.Link>

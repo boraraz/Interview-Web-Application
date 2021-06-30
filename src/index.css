@@ -54,9 +54,7 @@
   border-radius: 3px;
   padding: 15px 1px;
 }
-.align{
-  padding-top: 10px;
-}
+
 /*Main CSS*/
 .mainLayout{
   width: 80%;
@@ -100,3 +98,8 @@
 .borderTable{
   border-bottom: none !important;
 } */
+
+.center-div {
+  align-items: center;
+  display: flex;
+}
