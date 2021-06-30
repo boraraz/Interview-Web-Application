@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <Container fluid>
-        <Row>
+        <Row fluid>
           <Header />
         </Row>
         <Row className="bodyLayout">

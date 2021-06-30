@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dropdown, Button, } from 'react-bootstrap';
+import { Dropdown, Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { setSubject } from '../store/QuestionReducer'
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom";
@@ -21,7 +21,7 @@ const Header = () => {
         history.push("/answers");
     }
     return (
-        <div className="container fluid flex-nowrap p-0">
+        <Container fluid className="p-0">
             <div className="d-flex flex-nowrap headerLayout justify-content-between">
                 <h1 className="headerStyle">BİTES Interview</h1>
                 <div></div>
@@ -45,8 +45,14 @@ const Header = () => {
                 </div>
             </div>
             <hr className="hrmp" />
-            <div><p className="desktop title">Frontend</p></div>
-        </div>
+            <Navbar className="desktop justify-content-center" fluid bg="primary" variant="dark" expanded="true">
+                <Nav>
+                    <Nav.Link className="navbar-element" href="#frontend">Frontend</Nav.Link>
+                    <Nav.Link className="navbar-element" href="#backend">Backend</Nav.Link>
+                    <Nav.Link className="navbar-element" href="#devops">Devops</Nav.Link>
+                </Nav>
+            </Navbar>
+        </Container>
     );
 
 }
