@@ -76,7 +76,7 @@
 }
 /* Sidebar CSS*/
 .sidenav{
-  height: 700px; 
+  height: 610px; 
   border: 1px solid #292b2c;
   width: 20%;
   background-color: #6c757d;
@@ -90,9 +90,6 @@
   text-decoration-style: none;
   color:white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.border{
-  border:none !important;
 }
 /* Store CSS 
 .borderTable{

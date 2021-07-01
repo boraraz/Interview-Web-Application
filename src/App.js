@@ -24,7 +24,7 @@ const App = () => {
           <Col sm={2} className="sidenav mobil">
             <Sidebar/>
           </Col>
-          <Col className="mainLayout">
+          <Col className="mainLayout" style={{height:"600px", overflow:"auto"}}>
             <Switch>
               <Route exact path="/Main">
                 <Main />

@@ -10,7 +10,7 @@ const Answers = (props) => {
     const [answer, setAnswer] = useState([])
     var questionState = useSelector((state) => state.question)
     const [emptyArray] = useState([])
-    debugger
+    
 
     useEffect(() => {
         setAnswer(ans);
@@ -21,6 +21,7 @@ const Answers = (props) => {
     }
     return (
         <div className="container fluid">
+            <h1 style={{color: "#007bff"}}>ANSWERS</h1>
             <Table>
                 <tbody>
                     <tr>

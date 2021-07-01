@@ -9,7 +9,9 @@ const Main = () => {
     const { subject, questions } = useSelector((state) => state.question)
     const [answer, setAnswer] = useState("")
     const [name, setName] = useState("")
-    const [count, setCount] = useState(0)
+    const [FrontCount, setFCount] = useState(0)
+    const [BackCount, setBCount] = useState(0)
+    const [DevCount, setDCount] = useState(0)
     const [storeVisible, setStoreVisible] = useState(false)
     const [selectedQuestion, setSelectedQuestion] = useState([])
     const alert = useAlert()
@@ -23,14 +25,25 @@ const Main = () => {
     useEffect(() => {
         const selected = questions.filter((x) => x.type === subject)
         setSelectedQuestion(selected)
-        if (selected.length !== 0 && selected[count].name !== undefined) {
-            const qname = selected[count].name
-            setName(qname)
+        if (selected.length !== 0 && selected[FrontCount].name !== undefined) {
+            if (subject === "FrontEnd") {
+                const qname = selected[FrontCount].name
+                setName(qname)
+            }
         }
-    }, [count, subject]);
-    useEffect(() => {
-            setCount(0)
-    }, [subject])
+        if (selected.length !== 0 && selected[BackCount].name !== undefined) {
+            if (subject === "BackEnd") {
+                const qname = selected[BackCount].name
+                setName(qname)
+            }
+        }
+        if (selected.length !== 0 && selected[DevCount].name !== undefined) {
+            if (subject === "DevEnd") {
+                const qname = selected[DevCount].name
+                setName(qname)
+            }
+        }
+    }, [FrontCount, BackCount, DevCount, subject]);
     const saveAnswer = (param) => {
         setStoreVisible(storeVisible)
         setAnswer(param)
@@ -41,20 +54,32 @@ const Main = () => {
         }
         setSavedAnswers([...savedAnswers, answerObject])
         setAnswer("")
-        if (selectedQuestion.length === count + 1) {
+        if (selectedQuestion.length === FrontCount + 1 &&
+            selectedQuestion.length === BackCount + 1 &&
+            selectedQuestion.length === DevCount + 1) {
             alert.show('There is no more questions left!')
-        } else {
-            if(subject === "FrontEnd"){
-            const FrontCount = count + 1
-            setCount(FrontCount)
+        }
+        else if(selectedQuestion.length === FrontCount + 1){
+            alert.show('There is no more questions left in this subject!')
+        }
+        else if(selectedQuestion.length === BackCount + 1){
+            alert.show('There is no more questions left in this subject!')
+        }
+        else if(selectedQuestion.length === DevCount + 1){
+            alert.show('There is no more questions left in this subject!')
+        }
+        else {
+            if (subject === "FrontEnd") {
+                const a = FrontCount + 1
+                setFCount(a)
             }
-            else if(subject === "BackEnd"){
-                const BackCount = count + 1
-                setCount(BackCount)
+            else if (subject === "BackEnd") {
+                const a = BackCount + 1
+                setBCount(a)
             }
-            else if(subject === "DevOps"){
-                const DevCount = count + 1
-                setCount(DevCount)
+            else if (subject === "DevOps") {
+                const a = DevCount + 1
+                setDCount(a)
             }
         }
     }
@@ -68,7 +93,7 @@ const Main = () => {
             </div>
             <div>
                 <form className="pt-2">
-                    <textarea name="Answer" style={{ width: '95%', height: '150px' }} className="container-fluid " placeholder="Your answer here... (Press Save All button after completing each section)" onChange={(e) => changeAnswer(e.target.value)} value={answer}></textarea>
+                    <textarea name="Answer" style={{ width: '95%', height: '150px' }} className="container-fluid " placeholder="Your answer here... (Press Save All button after completing each subject)" onChange={(e) => changeAnswer(e.target.value)} value={answer}></textarea>
                     <br /><br />
                     <Button className="btnStyle bg-primary" value="Next Question" title="Saves the answer and shows the new question" onClick={() => saveAnswer(answer)}>Next Question</Button>
                     <Button className="btnStyle bg-primary" value="Save All" onClick={() => sendToStore()}>Save All</Button>

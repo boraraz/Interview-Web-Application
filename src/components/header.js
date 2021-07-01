@@ -27,12 +27,12 @@ const Header = () => {
                 <div className="center-div">
                     <Button className="mobile btnStyle" onClick={() => showAnswers()}>Show Answers</Button>
                     <Button className="mobile btnStyle" onClick={() => page()}>Question Entry</Button>
-                    <Button className="mobile btnStyle" onClick={() => refresh()}>Question</Button>
+                    <Button className="mobile btnStyle" onClick={() => refresh()}>Questions</Button>
 
                     <Dropdown className="desktop bodyLayout">
                         <Dropdown.Toggle className="btnStyle" id="dropdown">Menu</Dropdown.Toggle>
                         <Dropdown.Menu >
-                            <Dropdown.Item onClick={() => refresh()}>Question</Dropdown.Item>
+                            <Dropdown.Item onClick={() => refresh()}>Questions</Dropdown.Item>
                             <Dropdown.Item onClick={() => page()}>Question Entry</Dropdown.Item>
                             <Dropdown.Item onClick={() => showAnswers()}>Show Answer</Dropdown.Item>
                             </Dropdown.Menu>

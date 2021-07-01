@@ -15,13 +15,13 @@ const dispatch = useDispatch()
             <div>
                 <nav className="mobile">
                     <ListGroup className="listGroup">
-                        <Button className="bg-secondary border" onClick={() => selectSubject("FrontEnd")}>
+                        <Button className="bg-secondary btn-secondary" onClick={() => selectSubject("FrontEnd")}>
                             <h3 className="listItem">FrontEnd</h3>
                         </Button>
-                        <Button className="bg-secondary border" onClick={() =>selectSubject("BackEnd")}>
+                        <Button className="bg-secondary btn-secondary" onClick={() =>selectSubject("BackEnd")}>
                             <h3 className="listItem">BackEnd</h3>
                         </Button>
-                        <Button className="bg-secondary border" onClick={() => selectSubject("DevOps")}>
+                        <Button className="bg-secondary btn-secondary" onClick={() => selectSubject("DevOps")}>
                             <h3 className="listItem">DevOps</h3>
                         </Button>
                     </ListGroup>

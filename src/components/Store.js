@@ -20,7 +20,7 @@ const Store = (props) => {
         const newQuestions = questions.filter(x => x.name !== qname.name)
         dispatch(updateQuestions(newQuestions))
     }
-    debugger
+    
     return (
         <Container fluid>
             <Table className="mt-3" style={{tableLayout: "auto"}}>
