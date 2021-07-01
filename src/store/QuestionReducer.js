@@ -12,7 +12,7 @@ const QuestionSlice = createSlice({
             state.questions = [...state.questions, action.payload];
         },
         addAnswer: (state, action) => {
-            state.answers = [...state.answers, action.payload];
+            state.answers = action.payload;
         },
 
         setSubject: (state, action) => {

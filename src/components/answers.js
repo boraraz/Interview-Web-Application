@@ -8,7 +8,7 @@ import { deletedQuestions } from '../store/QuestionReducer.js'
 const Answers = (props) => {
     const { ans } = props
     const [answer, setAnswer] = useState([])
-    var  questionState = useSelector((state) => state.question)
+    var questionState = useSelector((state) => state.question)
     const [emptyArray] = useState([])
     debugger
 
@@ -16,21 +16,19 @@ const Answers = (props) => {
         setAnswer(ans);
     }, [ans]);
     const dispatch = useDispatch()
-    const deleteAnswers= () =>{
+    const deleteAnswers = () => {
         dispatch(deletedQuestions(emptyArray))
     }
     return (
         <div className="container fluid">
             <Table>
-                <thead>
+                <tbody>
                     <tr>
                         <th>Subject</th>
                         <th>Quesiton</th>
                         <th>Answer</th>
-                        <th style={{width: "20%"}}><Button onClick={() => deleteAnswers()} className="btn btn-primary">Delete All</Button></th>
+                        <th style={{ width: "20%" }}><Button onClick={() => deleteAnswers()} className="btn btn-primary">Delete All</Button></th>
                     </tr>
-                </thead>
-                <tbody>
                     {questionState.answers.map((x) => (
                         <tr>
                             <th>{x.type}</th>

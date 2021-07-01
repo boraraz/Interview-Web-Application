@@ -20,7 +20,7 @@ const Store = (props) => {
         const newQuestions = questions.filter(x => x.name !== qname.name)
         dispatch(updateQuestions(newQuestions))
     }
-
+    debugger
     return (
         <Container fluid>
             <Table className="mt-3" style={{tableLayout: "auto"}}>
@@ -31,9 +31,9 @@ const Store = (props) => {
                         <th style={{width: "10%"}}>Delete</th>
                     </tr>
 
-
+                    
                     {questions.map((x) => (
-
+                       
                         <tr >
                             <td>{x.type}</td>
                             <td>{x.name}</td>

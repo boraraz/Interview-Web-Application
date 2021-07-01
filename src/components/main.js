@@ -44,8 +44,18 @@ const Main = () => {
         if (selectedQuestion.length === count + 1) {
             alert.show('There is no more questions left!')
         } else {
-            const a = count + 1
-            setCount(a)
+            if(subject === "FrontEnd"){
+            const FrontCount = count + 1
+            setCount(FrontCount)
+            }
+            else if(subject === "BackEnd"){
+                const BackCount = count + 1
+                setCount(BackCount)
+            }
+            else if(subject === "DevOps"){
+                const DevCount = count + 1
+                setCount(DevCount)
+            }
         }
     }
     const sendToStore = () => {
@@ -58,7 +68,7 @@ const Main = () => {
             </div>
             <div>
                 <form className="pt-2">
-                    <textarea name="Answer" style={{ width: '95%', height: '150px' }} className="container-fluid " placeholder="Your answer here..." onChange={(e) => changeAnswer(e.target.value)} value={answer}></textarea>
+                    <textarea name="Answer" style={{ width: '95%', height: '150px' }} className="container-fluid " placeholder="Your answer here... (Press Save All button after completing each section)" onChange={(e) => changeAnswer(e.target.value)} value={answer}></textarea>
                     <br /><br />
                     <Button className="btnStyle bg-primary" value="Next Question" title="Saves the answer and shows the new question" onClick={() => saveAnswer(answer)}>Next Question</Button>
                     <Button className="btnStyle bg-primary" value="Save All" onClick={() => sendToStore()}>Save All</Button>
