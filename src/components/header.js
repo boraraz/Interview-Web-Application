@@ -21,9 +21,9 @@ const Header = () => {
         history.push("/answers");
     }
     return (
-        <Container fluid className="p-0">
+        <Container fluid className="p-0 sticky">
             <div className="d-flex flex-nowrap headerLayout justify-content-between bg-primary">
-                <img src="/assets/bites-logo.png" height="35px"/>
+                <img src="/assets/bites-logo.png" alt="Bites Logo" height="35px"/>
                 <div className="center-div">
                     <Button className="mobile btnStyle" onClick={() => showAnswers()}>Show Answers</Button>
                     <Button className="mobile btnStyle" onClick={() => page()}>Question Entry</Button>

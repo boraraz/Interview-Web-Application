@@ -14,19 +14,18 @@ const Main = () => {
     const [selectedQuestion, setSelectedQuestion] = useState([])
     const alert = useAlert()
     var [savedAnswers, setSavedAnswers] = useState([])
+    var subjectCopy = ""
     const changeAnswer = (value) => {
         setAnswer(value)
     }
 
     const dispatch = useDispatch()
+
     useEffect(() => {
         const selected = questions.filter((x) => x.type === subject)
         setSelectedQuestion(selected)
-    }, [subject]);
-
-    useEffect(() => {
-        if (selectedQuestion.length !== 0 && selectedQuestion[count].name !== undefined ) {
-            const qname = selectedQuestion[count].name 
+        if (selected.length !== 0 && selected[count].name !== undefined ) {
+            const qname = selected[count].name 
             setName(qname)
         }
     }, [count, subject]);
