@@ -38,7 +38,7 @@ const Main = () => {
             }
         }
         if (selected.length !== 0 && selected[DevCount].name !== undefined) {
-            if (subject === "DevEnd") {
+            if (subject === "DevOps") {
                 const qname = selected[DevCount].name
                 setName(qname)
             }
@@ -59,13 +59,13 @@ const Main = () => {
             selectedQuestion.length === DevCount + 1) {
             alert.show('There is no more questions left!')
         }
-        else if(selectedQuestion.length === FrontCount + 1){
+        else if(selectedQuestion.length === FrontCount + 1 && subject === "FrontEnd"){
             alert.show('There is no more questions left in this subject!')
         }
-        else if(selectedQuestion.length === BackCount + 1){
+        else if(selectedQuestion.length === BackCount + 1 && subject === "BackEnd"){
             alert.show('There is no more questions left in this subject!')
         }
-        else if(selectedQuestion.length === DevCount + 1){
+        else if(selectedQuestion.length === DevCount + 1 && subject === "DevOps"){
             alert.show('There is no more questions left in this subject!')
         }
         else {
