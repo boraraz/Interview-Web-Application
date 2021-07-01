@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { useAlert } from 'react-alert'
 import { addAnswer } from '../store/QuestionReducer.js'
-var subjectCopy = ""
+
 const Main = () => {
     const { subject, questions } = useSelector((state) => state.question)
     const [answer, setAnswer] = useState("")
@@ -14,7 +14,6 @@ const Main = () => {
     const [selectedQuestion, setSelectedQuestion] = useState([])
     const alert = useAlert()
     var [savedAnswers, setSavedAnswers] = useState([])
-
     const changeAnswer = (value) => {
         setAnswer(value)
     }
@@ -29,7 +28,9 @@ const Main = () => {
             setName(qname)
         }
     }, [count, subject]);
-
+    useEffect(() => {
+            setCount(0)
+    }, [subject])
     const saveAnswer = (param) => {
         setStoreVisible(storeVisible)
         setAnswer(param)
@@ -47,12 +48,9 @@ const Main = () => {
             setCount(a)
         }
     }
-
-    subjectCopy = subject;
     const sendToStore = () => {
         dispatch(addAnswer(savedAnswers))
     }
-
     return (
         <div className="sec">
             <div className="question">
