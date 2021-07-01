@@ -9,12 +9,12 @@ const Store = (props) => {
     const { quest } = props
     const [question, setAnswer] = useState([])
     var { questions } = useSelector((state) => state.question)
+    const [emptyArray] = useState([])
     useEffect(() => {
         setAnswer(quest);
     }, [quest]);
-
-    const alert = useAlert();
     const dispatch = useDispatch()
+    const alert = useAlert();
     const deleteQuestion = (qname) => {
         alert.show("Deleted");
         const newQuestions = questions.filter(x => x.name !== qname.name)
@@ -28,13 +28,13 @@ const Store = (props) => {
                     <tr>
                         <th style={{width: "10%"}}>Subject</th>
                         <th style={{width: "80%"}}>Question</th>
-                        <th style={{width: "10%"}}>Delete</th>
+                        <th style={{width: "10%"}}>       </th>
                     </tr>
 
                     
                     {questions.map((x) => (
                        
-                        <tr >
+                        <tr>
                             <td>{x.type}</td>
                             <td>{x.name}</td>
                             <td><Button onClick={() => deleteQuestion(x)} className="btn btn-primary">Delete</Button></td>

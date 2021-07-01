@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table'
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Button } from 'react-bootstrap';
-import { deletedQuestions } from '../store/QuestionReducer.js'
+import { deletedAnswers } from '../store/QuestionReducer.js'
 
 const Answers = (props) => {
     const { ans } = props
@@ -17,7 +17,7 @@ const Answers = (props) => {
     }, [ans]);
     const dispatch = useDispatch()
     const deleteAnswers = () => {
-        dispatch(deletedQuestions(emptyArray))
+        dispatch(deletedAnswers(emptyArray))
     }
     return (
         <div className="container fluid">

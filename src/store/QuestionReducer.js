@@ -21,11 +21,11 @@ const QuestionSlice = createSlice({
         updateQuestions: (state, action) => {
             state.questions = action.payload;
         },
-        deletedQuestions: (state,action) => {
+        deletedAnswers: (state,action) => {
             state.answers = action.payload;
         },
     }
 });
 
-export const { addQuestion, setSubject, addAnswer, updateQuestions, deletedQuestions } = QuestionSlice.actions
+export const { addQuestion, setSubject, addAnswer, updateQuestions, deletedAnswers } = QuestionSlice.actions
 export default QuestionSlice.reducer
