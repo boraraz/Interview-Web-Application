@@ -7,7 +7,7 @@ import Answers from './components/answers';
 import { Row, Col, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  BrowserRouter as //Router,
+  BrowserRouter as Router,//don't remove
   Switch,
   Route,
   //Link
@@ -18,11 +18,11 @@ const App = () => {
   return (
     <Container fluid>
         <Row>
-          <Header className="sticky"  />
+          <Header/>
         </Row>
         <Row className="bodyLayout">
           <Col sm={2} className="sidenav mobil">
-            <Sidebar className="sticky" />
+            <Sidebar/>
           </Col>
           <Col className="mainLayout">
             <Switch>

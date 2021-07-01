@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { useAlert } from 'react-alert'
 import { addAnswer } from '../store/QuestionReducer.js'
-
+var subjectCopy = ""
 const Main = () => {
     const { subject, questions } = useSelector((state) => state.question)
     const [answer, setAnswer] = useState("")
@@ -14,7 +14,7 @@ const Main = () => {
     const [selectedQuestion, setSelectedQuestion] = useState([])
     const alert = useAlert()
     var [savedAnswers, setSavedAnswers] = useState([])
-    var subjectCopy = ""
+
     const changeAnswer = (value) => {
         setAnswer(value)
     }
@@ -24,8 +24,8 @@ const Main = () => {
     useEffect(() => {
         const selected = questions.filter((x) => x.type === subject)
         setSelectedQuestion(selected)
-        if (selected.length !== 0 && selected[count].name !== undefined ) {
-            const qname = selected[count].name 
+        if (selected.length !== 0 && selected[count].name !== undefined) {
+            const qname = selected[count].name
             setName(qname)
         }
     }, [count, subject]);
@@ -38,7 +38,7 @@ const Main = () => {
             aName: answer,
             questName: name,
         }
-        setSavedAnswers([...savedAnswers, answerObject]) 
+        setSavedAnswers([...savedAnswers, answerObject])
         setAnswer("")
         if (selectedQuestion.length === count + 1) {
             alert.show('There is no more questions left!')
@@ -47,7 +47,9 @@ const Main = () => {
             setCount(a)
         }
     }
-    const sendToStore = () =>{
+
+    subjectCopy = subject;
+    const sendToStore = () => {
         dispatch(addAnswer(savedAnswers))
     }
 
@@ -62,7 +64,7 @@ const Main = () => {
                     <br /><br />
                     <Button className="btnStyle bg-primary" value="Next Question" title="Saves the answer and shows the new question" onClick={() => saveAnswer(answer)}>Next Question</Button>
                     <Button className="btnStyle bg-primary" value="Save All" onClick={() => sendToStore()}>Save All</Button>
-                   </form>
+                </form>
             </div>
             {storeVisible &&
                 <Answers ans={answer} />
