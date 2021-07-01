@@ -54,12 +54,7 @@ const Main = () => {
         }
         setSavedAnswers([...savedAnswers, answerObject])
         setAnswer("")
-        if (selectedQuestion.length === FrontCount + 1 &&
-            selectedQuestion.length === BackCount + 1 &&
-            selectedQuestion.length === DevCount + 1) {
-            alert.show('There is no more questions left!')
-        }
-        else if(selectedQuestion.length === FrontCount + 1 && subject === "FrontEnd"){
+        if(selectedQuestion.length === FrontCount + 1 && subject === "FrontEnd"){
             alert.show('There is no more questions left in this subject!')
         }
         else if(selectedQuestion.length === BackCount + 1 && subject === "BackEnd"){
