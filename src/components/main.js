@@ -88,7 +88,7 @@ const Main = () => {
             </div>
             <div>
                 <form className="pt-2">
-                    <textarea name="Answer" style={{ width: '95%', height: '150px' }} className="container-fluid " placeholder="Your answer here... (Press Save All button after completing each subject)" onChange={(e) => changeAnswer(e.target.value)} value={answer}></textarea>
+                    <textarea name="Answer" style={{ width: '95%', height: '150px' }} className="container-fluid " placeholder="Your answer here... (Press Save All button after completing the interview)" onChange={(e) => changeAnswer(e.target.value)} value={answer}></textarea>
                     <br /><br />
                     <Button className="btnStyle bg-primary" value="Next Question" title="Saves the answer and shows the new question" onClick={() => saveAnswer(answer)}>Next Question</Button>
                     <Button className="btnStyle bg-primary" value="Save All" onClick={() => sendToStore()}>Save All</Button>
