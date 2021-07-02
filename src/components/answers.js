@@ -10,15 +10,15 @@ const Answers = (props) => {
     const [answer, setAnswer] = useState([])
     var questionState = useSelector((state) => state.question)
     const [emptyArray] = useState([])
-    
-
-    useEffect(() => {
-        setAnswer(ans);
-    }, [ans]);
     const dispatch = useDispatch()
     const deleteAnswers = () => {
         dispatch(deletedAnswers(emptyArray))
     }
+    
+    useEffect(() => {
+        setAnswer(ans);
+    }, [ans]);
+    
     return (
         <div className="container fluid">
             <h1 style={{color: "#007bff"}}>ANSWERS</h1>
