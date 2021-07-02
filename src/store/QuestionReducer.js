@@ -14,7 +14,6 @@ const QuestionSlice = createSlice({
         addAnswer: (state, action) => {
             state.answers = action.payload;
         },
-
         setSubject: (state, action) => {
             state.subject = action.payload;
         },

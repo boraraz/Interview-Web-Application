@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom";
 const Header = () => {
     let history = useHistory();
     const dispatch = useDispatch();
-
     const selectSubject = (parameter) => {
         dispatch(setSubject(parameter));
     }
@@ -28,7 +27,6 @@ const Header = () => {
                     <Button className="mobile btnStyle" onClick={() => showAnswers()}>Show Answers</Button>
                     <Button className="mobile btnStyle" onClick={() => page()}>Question Entry</Button>
                     <Button className="mobile btnStyle" onClick={() => refresh()}>Questions</Button>
-
                     <Dropdown className="desktop bodyLayout">
                         <Dropdown.Toggle className="btnStyle" id="dropdown">Menu</Dropdown.Toggle>
                         <Dropdown.Menu >
@@ -48,7 +46,6 @@ const Header = () => {
             </Navbar>
         </Container>
     );
-
 }
 
 export default Header;

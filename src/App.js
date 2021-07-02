@@ -7,14 +7,13 @@ import Answers from './components/answers';
 import { Row, Col, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  BrowserRouter as Router,//don't remove
+  BrowserRouter as Router,
   Switch,
   Route,
   //Link
 } from "react-router-dom";
 
 const App = () => {
-
   return (
     <Container fluid>
         <Row>
@@ -36,7 +35,6 @@ const App = () => {
         </Row>
     </Container>
   );
-
 }
 
 export default App;

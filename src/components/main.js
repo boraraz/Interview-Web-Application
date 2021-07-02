@@ -19,9 +19,7 @@ const Main = () => {
     const changeAnswer = (value) => {
         setAnswer(value)
     }
-
     const dispatch = useDispatch()
-
     useEffect(() => {
         const selected = questions.filter((x) => x.type === subject)
         setSelectedQuestion(selected)
@@ -37,7 +35,6 @@ const Main = () => {
                 setName(qname)
             }
         }
-        
         if (subject === "DevOps") {
             if (selected.length !== 0 && selected[DevCount].name !== undefined) {
                 const qname = selected[DevCount].name

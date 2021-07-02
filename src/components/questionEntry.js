@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addQuestion } from '../store/QuestionReducer.js'
 
 const QuestionEntry = () => {
-
-
     const [question, setQuestion] = useState("")
     const [questions, setQuestions] = useState([])
     const [storeVisible, setStoreVisible] = useState(true)
@@ -14,10 +12,8 @@ const QuestionEntry = () => {
     const changeQuestion = (value) => {
         setQuestion(value)
     }
-    const dispatch = useDispatch() 
-
+    const dispatch = useDispatch()
     const saveQuestion = (question) => {
-
         const obj = { type: subject, name: question }
         questions.push(obj)
         setQuestions(questions)
@@ -42,6 +38,6 @@ const QuestionEntry = () => {
             }
         </div>
     );
-
 }
+
 export default QuestionEntry

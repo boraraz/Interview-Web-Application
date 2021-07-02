@@ -1,4 +1,3 @@
-
 import Table from 'react-bootstrap/Table'
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
@@ -14,11 +13,9 @@ const Answers = (props) => {
     const deleteAnswers = () => {
         dispatch(deletedAnswers(emptyArray))
     }
-    
     useEffect(() => {
         setAnswer(ans);
     }, [ans]);
-    
     return (
         <div className="container fluid">
             <h1 style={{color: "#007bff"}}>ANSWERS</h1>
