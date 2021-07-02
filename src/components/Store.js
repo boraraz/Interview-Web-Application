@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import Table from 'react-bootstrap/Table'
 import { Button, Container } from 'react-bootstrap';
-import { useAlert } from 'react-alert';
 import { updateQuestions } from '../store/QuestionReducer.js'
 
 const Store = (props) => {
@@ -14,9 +13,9 @@ const Store = (props) => {
         setAnswer(quest);
     }, [quest]);
     const dispatch = useDispatch()
-    const alert = useAlert();
+   
     const deleteQuestion = (qname) => {
-        alert.show("Deleted");
+        
         const newQuestions = questions.filter(x => x.name !== qname.name)
         dispatch(updateQuestions(newQuestions))
     }

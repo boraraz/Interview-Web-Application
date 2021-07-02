@@ -14,7 +14,7 @@ const dispatch = useDispatch()
         return (
             <div>
                 <nav className="mobile">
-                    <ListGroup className="listGroup">
+                    <ListGroup className="listGroup mt-2">
                         <Button className="bg-secondary btn-secondary" onClick={() => selectSubject("FrontEnd")}>
                             <h3 className="listItem">FrontEnd</h3>
                         </Button>

@@ -25,20 +25,21 @@ const Main = () => {
     useEffect(() => {
         const selected = questions.filter((x) => x.type === subject)
         setSelectedQuestion(selected)
-        if (selected.length !== 0 && selected[FrontCount].name !== undefined) {
-            if (subject === "FrontEnd") {
+        if (subject === "FrontEnd") {
+            if (selected.length !== 0 && selected[FrontCount].name !== undefined) {
                 const qname = selected[FrontCount].name
                 setName(qname)
             }
         }
-        if (selected.length !== 0 && selected[BackCount].name !== undefined) {
-            if (subject === "BackEnd") {
+        if (subject === "BackEnd") {
+            if (selected.length !== 0 && selected[BackCount].name !== undefined) {
                 const qname = selected[BackCount].name
                 setName(qname)
             }
         }
-        if (selected.length !== 0 && selected[DevCount].name !== undefined) {
-            if (subject === "DevOps") {
+        
+        if (subject === "DevOps") {
+            if (selected.length !== 0 && selected[DevCount].name !== undefined) {
                 const qname = selected[DevCount].name
                 setName(qname)
             }
@@ -54,14 +55,17 @@ const Main = () => {
         }
         setSavedAnswers([...savedAnswers, answerObject])
         setAnswer("")
-        if(selectedQuestion.length === FrontCount + 1 && subject === "FrontEnd"){
+        if (selectedQuestion.length === FrontCount + 1 && subject === "FrontEnd") {
             alert.show('There is no more questions left in this subject!')
+            setName(" ")
         }
-        else if(selectedQuestion.length === BackCount + 1 && subject === "BackEnd"){
+        else if (selectedQuestion.length === BackCount + 1 && subject === "BackEnd") {
             alert.show('There is no more questions left in this subject!')
+            setName(" ")
         }
-        else if(selectedQuestion.length === DevCount + 1 && subject === "DevOps"){
+        else if (selectedQuestion.length === DevCount + 1 && subject === "DevOps") {
             alert.show('There is no more questions left in this subject!')
+            setName(" ")
         }
         else {
             if (subject === "FrontEnd") {
